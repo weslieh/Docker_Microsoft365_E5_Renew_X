@@ -15,7 +15,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster
 WORKDIR /app
 COPY --from=base /app .
 #预执行命令，容器创建完成后执行的命令，使得程序能够执行
-EXPOSE 1066 8080
+EXPOSE 1066
 RUN dotnet dev-certs https --clean
 RUN dotnet dev-certs https
 ENTRYPOINT ["dotnet", "Microsoft365_E5_Renew_X.dll"]
